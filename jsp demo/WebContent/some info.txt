@@ -1,0 +1,65 @@
+directive tag:-
+<%@ page import="java.util.Date, java.util.Scanner" %>
+<%@ include file="file.jsp" %>
+<%@ taglib uri="uri" prefix="fx" %>
+
+directive tag is 3types:-
+
+<%@ page ...%> want to import package and classes
+<%@ include  ...%> want to use another jsp file in your jsp file
+<%@ taglib  ...%> want to add external libraries
+
+Attributes of page:-
+			language="scripting language"
+			extends="className"
+			import="package.Class"
+			session="true|false"
+			autoFlush="true|false"
+			contentType="ctinfo"
+			errorPage="error_url"
+			isErrorPage="true|false"
+			info="information"
+			isELIgnored="true|false"
+			isThreadSafe="true|false"
+-----------------------------------------------------------------------
+
+
+declaration tag:-
+<%!
+	int i = 0;
+%>
+-----------------------------------------------------------------------
+
+
+scriptlet tag:-
+<%
+	int i = Integer.parseInt(request.getParameter("num1"));
+	int j = Integer.parseInt(request.getParameter("num2"));
+	int sum = i + j;
+%>
+-----------------------------------------------------------------------
+
+
+expression tag:-
+<%=
+	sum
+%>
+-----------------------------------------------------------------------
+
+
+Builtin Objects (can be used in scriptlet and expression):-
+request (HttpServletRequest)
+response (HttpServletResponse)
+pageContext (pageContext)
+out (JspWriter) ~ PrintWriter Object
+session (HttpSession)
+application (ServletContext)
+config (ServletConfig)
+
+
+
+
+
+
+
+

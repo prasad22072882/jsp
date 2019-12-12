@@ -6,13 +6,10 @@
 <meta charset="ISO-8859-1">
 <title>Insert title here</title>
 </head>
-<body style="background:lightblue">
+<body style="background: lightblue">
 	<%
-		int a = Integer.parseInt(request.getParameter("num1"));
-		int b = Integer.parseInt(request.getParameter("num2"));
-		int sum = a + b;
-
-		out.println("Result is: " + sum);
+		pageContext.setAttribute("name", "Raj"); // scope of this attribute is current page only.
+		pageContext.setAttribute("name", "Rahul", pageContext.SESSION_SCOPE); // scope of this attribute is all jsp page through session
 	%>
 </body>
 </html>
