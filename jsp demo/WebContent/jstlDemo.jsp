@@ -2,7 +2,7 @@
 	pageEncoding="ISO-8859-1"%>
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,13 +10,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<sql:setDataSource var="dataSource"
-		driver="oracle.jdbc.driver.OracleDriver"
-		url="jdbc:oracle:thin:@localhost:1521/orclpdb" user="sys as sysdba"
-		password="orcl" />
-	<sql:query var="rs" dataSource="${dataSource}">select * from student</sql:query>
-	<c:forEach items="${rs.rows}" var="temp">
-		${temp.name}<br>
+	<c:set var="str" value="I am a student"/>
+	
+	${str}<br>
+	
+	Length of string is: ${fn:length(str)}<br> <!-- get the length of the string -->
+	
+	<c:forEach items="${fn:split(str, ' ')}" var="temp">
+		${temp}<br>
 	</c:forEach>
+	
+	${fn:contains(str, "student")}<br>
+	
+	<c:if test="${fn:contains(str, 'student')}">
+		student is der
+	</c:if>
 </body>
 </html>
