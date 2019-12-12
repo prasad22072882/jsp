@@ -55,7 +55,11 @@ out (JspWriter) ~ PrintWriter Object
 session (HttpSession)
 application (ServletContext)
 config (ServletConfig)
+-----------------------------------------------------------------------
 
+
+JSTL (Jsp Standard Tag Library):-
+${name} 
 
 
 
